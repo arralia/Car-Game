@@ -122,11 +122,12 @@ int collision()
     if(enemyY[0]+4 >= 23)
     {
         if(enemyX[0]+4 - carPos >= 0 && enemyX[0]+4 - carPos < 9) return 1;
+        //will have to change since width of car is greater now
     }
     return 0;
 }
 
-void gameover()
+void gameOver()
 {
     system("cls");
     cout<<endl;
@@ -170,11 +171,100 @@ void play()
     genEnemy(0);
     genEnemy(1);
 
-    gotoxy(WIN_WIDTH+7, 2); cout<<"Welcome to Alyssia's Car Game!";
-    gotoxy(WIN_WIDTH+6, 4); cout<<"Welcome to Alyssia's Car Game!";
-    gotoxy(WIN_WIDTH+6, 6); cout<<"Welcome to Alyssia's Car Game!";
-    gotoxy(WIN_WIDTH+7, 12); cout<<"Welcome to Alyssia's Car Game!";
-    gotoxy(WIN_WIDTH+7, 13); cout<<"Welcome to Alyssia's Car Game!";
-    gotoxy(WIN_WIDTH+2, 14); cout<<"Welcome to Alyssia's Car Game!";
-    gotoxy(WIN_WIDTH+2, 15); cout<<"Welcome to Alyssia's Car Game!";
+    gotoxy(WIN_WIDTH+7, 2); cout<<"Alyssia's Car Game!";
+    gotoxy(WIN_WIDTH+6, 4); cout<<"------------------";
+    gotoxy(WIN_WIDTH+6, 6); cout<<"------------------";
+    gotoxy(WIN_WIDTH+7, 12); cout<<"Control";
+    gotoxy(WIN_WIDTH+7, 13); cout<<"-----------";
+    gotoxy(WIN_WIDTH+2, 14); cout<<"A Key - Left";
+    gotoxy(WIN_WIDTH+2, 15); cout<<"D Key - Right";
+
+    gotoxy(18,5);
+    cout<<"Press any key to start";
+    getch();
+    gotoxy(18,5);
+    cout<<"                          ";
+
+    while(true)
+    {
+        if(kbhit())
+        {
+            char ch = getch();
+            if(ch == 'a' || ch == 'A')
+            {
+                if(carPos > 18) 
+                    carPos -=4;
+            }
+            if(ch == 'd' || ch == 'D')
+            {
+                if(carPos < 50) 
+                    carPos +=4;
+            }
+            if(ch==27) //esc key ASCII
+            {
+                break;
+            }
+        }
+    
+
+        drawCar();
+        drawEnemy(0);
+        drawEnemy(1);
+        if(collision()==1)
+        {
+            gameOver();
+            return;
+        }
+
+        Sleep(50);
+        eraseCar();
+        eraseEnemy(0);
+        eraseEnemy(1);
+
+        if(enemyY[0] == 10)
+        {
+            if(enemyFlag[1] == 0)
+                enemyFlag[1] = 1;
+        }
+        if(enemyFlag[0] == 1)
+            ++enemyY[0];
+        if(enemyFlag[1] == 1)
+            ++enemyY[1];
+        if(enemyY[0] > SCREEN_HEIGHT-4)
+        {
+            resetEnemy(0);
+            score++;
+            updateScore();
+        }
+        if(enemyY[1] > SCREEN_HEIGHT-4)
+        {
+            resetEnemy(1);
+            ++score;
+            updateScore();
+        }
+    }
+}
+
+int main()
+{
+    setcursor(0,0);
+    srand((unsigned)time(NULL));
+    do{
+        system("cls");
+        gotoxy(10,5); cout<< " ---------------------------- ";
+        gotoxy(10,6); cout<< " |    Alyssia's Car Game    |";
+        gotoxy(10,7); cout<< " ---------------------------- ";
+        gotoxy(10,10); cout<< "1. Start Game";
+        gotoxy(10,11); cout<< "2. Instructions";
+        gotoxy(10,12); cout<< "3. Quit";
+        gotoxy(10,14); cout<< "Select option: ";
+        char op = getche();
+
+        if(op == '1') play();
+        else if(op=='2') instructions();
+        else if(op == '3') exit(0);
+    } while(true);
+
+    return 0;
+    
 }
