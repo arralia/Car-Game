@@ -1,0 +1,46 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 21,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "default",
+            "displayName": "Default",
+            "description": "Default build settings using GCC & GDB in Debug mode",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER": "g++",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_CXX_FLAGS": "-Wall -Wextra -Wpedantic -Wfatal-errors -ggdb -fsanitize=address,undefined,leak -fsanitize-recover=all",
+                "CMAKE_EXE_LINKER_FLAGS": "-fsanitize=address,undefined,leak -fsanitize-recover=all"
+            }
+        },
+        {
+            "name": "debug",
+            "displayName": "Debug",
+            "description": "Default build settings using GCC & GDB in Debug mode",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER": "g++",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_CXX_FLAGS": "-Wall -Wextra -Wpedantic -Wfatal-errors -ggdb",
+                "CMAKE_EXE_LINKER_FLAGS": ""
+            }
+        },
+        {
+            "name": "optimize",
+            "displayName": "Optimize",
+            "description": "Optimized build settings using GCC and GDB",
+            "binaryDir": "${sourceDir}/build",
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER": "g++",
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ]
+}
