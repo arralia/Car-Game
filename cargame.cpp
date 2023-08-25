@@ -136,3 +136,45 @@ void gameover()
     cout<<"\t\tPress any key to return to the menu"<<endl;
     getch();
 }
+
+void updateScore()
+{
+    gotoxy(WIN_WIDTH + 7,5);
+    cout<< "Score: "<<score<<endl;
+}
+
+void instructions()
+{
+    system("cls");
+    cout<<"Instructions";
+    cout<<"\n~~~~~~~~~~~~~~~~~~";
+    cout<<"\n Avoid Cars by moving left or right.";
+    cout<<"\n\n Press 'a' to move left";
+    cout<<"\n Press 'd' to move right";
+    cout<<"\n Press 'esc' to exit";
+    cout<<"\n\n Press any key to return to menu";
+    getch();
+}
+
+void play()
+{
+    carPos = -1 + WIN_WIDTH/2;
+    score = 0;
+    enemyFlag[0] = 1;
+    enemyFlag[1] = 0;
+    enemyY[0] = enemyY[1] = 1;
+
+    system("cls");
+    drawBorder();
+    updateScore();
+    genEnemy(0);
+    genEnemy(1);
+
+    gotoxy(WIN_WIDTH+7, 2); cout<<"Welcome to Alyssia's Car Game!";
+    gotoxy(WIN_WIDTH+6, 4); cout<<"Welcome to Alyssia's Car Game!";
+    gotoxy(WIN_WIDTH+6, 6); cout<<"Welcome to Alyssia's Car Game!";
+    gotoxy(WIN_WIDTH+7, 12); cout<<"Welcome to Alyssia's Car Game!";
+    gotoxy(WIN_WIDTH+7, 13); cout<<"Welcome to Alyssia's Car Game!";
+    gotoxy(WIN_WIDTH+2, 14); cout<<"Welcome to Alyssia's Car Game!";
+    gotoxy(WIN_WIDTH+2, 15); cout<<"Welcome to Alyssia's Car Game!";
+}
