@@ -2,9 +2,9 @@
 <Site BuildName="Win32-MSBuild"
 	BuildStamp="20230828-2154-Experimental"
 	Name="DESKTOP-H177A5E"
-	Generator="ctest-3.23.22060601-MSVC_2"
-	CompilerName="C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.33.31629/bin/Hostx64/x64/cl.exe"
-	CompilerVersion="19.33.31630.0"
+	Generator="ctest-3.26.4-msvc4"
+	CompilerName="C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.37.32822/bin/Hostx64/x64/cl.exe"
+	CompilerVersion="19.37.32822.0"
 	OSName="Windows"
 	Hostname="DESKTOP-H177A5E"
 	OSRelease=" Personal"
@@ -24,11 +24,11 @@
 	ProcessorClockFrequency="2918"
 	>
 	<Testing>
-		<StartDateTime>Aug 28 14:55 Pacific Daylight Time</StartDateTime>
-		<StartTestTime>1693259707</StartTestTime>
+		<StartDateTime>Aug 28 16:36 Pacific Daylight Time</StartDateTime>
+		<StartTestTime>1693265805</StartTestTime>
 		<TestList/>
-		<EndDateTime>Aug 28 14:55 Pacific Daylight Time</EndDateTime>
-		<EndTestTime>1693259707</EndTestTime>
+		<EndDateTime>Aug 28 16:36 Pacific Daylight Time</EndDateTime>
+		<EndTestTime>1693265805</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

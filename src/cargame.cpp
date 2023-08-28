@@ -66,7 +66,7 @@ void genEnemy(int ind)
 
 void drawEnemy(int ind)
 {
-    if(enemyFlag[ind] == true)
+    if(enemyFlag[ind] != 0)
     {
         gotoxy(enemyX[ind],enemyY[ind]); cout<<"****";
         gotoxy(enemyX[ind],enemyY[ind]+1); cout<<" ** ";
@@ -77,7 +77,7 @@ void drawEnemy(int ind)
 
 void eraseEnemy(int ind)
 {
-    if(enemyFlag[ind] == true)
+    if(enemyFlag[ind] != 0)
     {
         gotoxy(enemyX[ind],enemyY[ind]); cout<<"    ";
         gotoxy(enemyX[ind],enemyY[ind]+1); cout<<"    ";
@@ -135,7 +135,7 @@ void gameOver()
     cout<<"\t\t-------------GAME OVER-------------"<<endl;
     cout<<"\t\t-----------------------------------"<<endl;
     cout<<"\t\tPress any key to return to the menu"<<endl;
-    getch();
+    _getch();
 }
 
 void updateScore()
@@ -154,7 +154,7 @@ void instructions()
     cout<<"\n Press 'd' to move right";
     cout<<"\n Press 'esc' to exit";
     cout<<"\n\n Press any key to return to menu";
-    getch();
+    _getch();
 }
 
 void play()
@@ -181,15 +181,15 @@ void play()
 
     gotoxy(18,5);
     cout<<"Press any key to start";
-    getch();
+    _getch();
     gotoxy(18,5);
     cout<<"                          ";
 
     while(true)
     {
-        if(kbhit())
+        if(_kbhit())
         {
-            char ch = getch();
+            char ch = _getch();
             if(ch == 'a' || ch == 'A')
             {
                 if(carPos > 18) 
@@ -258,7 +258,7 @@ int main()
         gotoxy(10,11); cout<< "2. Instructions";
         gotoxy(10,12); cout<< "3. Quit";
         gotoxy(10,14); cout<< "Select option: ";
-        char op = getche();
+        char op = _getche();
 
         if(op == '1') play();
         else if(op=='2') instructions();
