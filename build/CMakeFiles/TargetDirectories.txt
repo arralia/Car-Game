@@ -1,9 +1,0 @@
-C:/Users/alyta/Documents/Code/CarGame/build/CMakeFiles/Experimental.dir
-C:/Users/alyta/Documents/Code/CarGame/build/CMakeFiles/Nightly.dir
-C:/Users/alyta/Documents/Code/CarGame/build/CMakeFiles/Continuous.dir
-C:/Users/alyta/Documents/Code/CarGame/build/CMakeFiles/NightlyMemoryCheck.dir
-C:/Users/alyta/Documents/Code/CarGame/build/CMakeFiles/cargame.dir
-C:/Users/alyta/Documents/Code/CarGame/build/CMakeFiles/PACKAGE.dir
-C:/Users/alyta/Documents/Code/CarGame/build/CMakeFiles/RUN_TESTS.dir
-C:/Users/alyta/Documents/Code/CarGame/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/alyta/Documents/Code/CarGame/build/CMakeFiles/ZERO_CHECK.dir
