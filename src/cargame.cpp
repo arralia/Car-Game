@@ -175,11 +175,11 @@ void play()
     genEnemy(0);
     genEnemy(1);
 
-    gotoxy(WIN_WIDTH+7, 2); cout<<"Alyssia's Car Game!";
-    gotoxy(WIN_WIDTH+6, 4); cout<<"------------------";
-    gotoxy(WIN_WIDTH+6, 6); cout<<"------------------";
-    gotoxy(WIN_WIDTH+7, 12); cout<<"Control";
-    gotoxy(WIN_WIDTH+7, 13); cout<<"-----------";
+    gotoxy(WIN_WIDTH+5, 2); cout<<"Alyssia's Car Game!";
+    gotoxy(WIN_WIDTH+5, 4); cout<<"------------------";
+    gotoxy(WIN_WIDTH+5, 6); cout<<"------------------";
+    gotoxy(WIN_WIDTH+6, 12); cout<<"Control";
+    gotoxy(WIN_WIDTH+6, 13); cout<<"-----------";
     gotoxy(WIN_WIDTH+2, 14); cout<<"A Key - Left";
     gotoxy(WIN_WIDTH+2, 15); cout<<"D Key - Right";
 
