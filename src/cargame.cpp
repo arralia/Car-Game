@@ -231,9 +231,9 @@ void play()
                 enemyFlag[1] = 1;
         }
         if(enemyFlag[0] == 1)
-            ++enemyY[0];
+            enemyY[0]+=1;
         if(enemyFlag[1] == 1)
-            ++enemyY[1];
+            enemyY[1]+=1;
         if(enemyY[0] > SCREEN_HEIGHT-4)
         {
             resetEnemy(0);
@@ -243,7 +243,7 @@ void play()
         if(enemyY[1] > SCREEN_HEIGHT-4)
         {
             resetEnemy(1);
-            ++score;
+            score++;
             updateScore();
         }
     }
